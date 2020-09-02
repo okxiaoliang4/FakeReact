@@ -6,7 +6,7 @@ class VButton extends Component {
     }
 
     render() {
-        return <div onClick={this.add} class='v-button'></div>;
+        return <div onClick={this.add} class="v-button"></div>;
     }
 
     add() {
@@ -20,13 +20,14 @@ class VIcon extends Component {
     }
 
     render() {
-        return <span class='v-icon'>icon</span>;
+        return <span class="v-icon">icon</span>;
     }
 }
 
 const vButton = (
-    <VButton data-user='jelf'>
-        <VIcon id='icon' />
+    <VButton data-user="jelf">
+        <VIcon id="icon" />
+        <VIcon id="icon" />
     </VButton>
 );
 

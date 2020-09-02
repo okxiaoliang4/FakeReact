@@ -1,12 +1,19 @@
+const componentRootSymbol = Symbol('componentRootSymbol');
 export class Component {
     constructor() {
-        this.root = this.render().root;
+        this[componentRootSymbol] = null;
     }
     setAttribute(name, value) {
         this.root.setAttribute(name, value);
     }
     appendChild(component) {
         this.root.appendChild(component.root);
+    }
+    get root() {
+        if (this[componentRootSymbol] === null) {
+            this[componentRootSymbol] = this.render().root;
+        }
+        return this[componentRootSymbol];
     }
     render() {}
 }
